@@ -256,10 +256,7 @@ After connecting, the multilayer switch logged:
 
 ---
 
-### Step 3: Switchport Security (Finance Dept)
-*Screenshots to be added.*
-
-### Step 4: Subnetting and IP Addressing
+### Step 3: Subnetting and IP Addressing
 
 **Base network:** `172.16.1.0`. VLSM is used so that every department gets exactly the address space it needs without waste.
 
@@ -543,10 +540,7 @@ Servers must always be reachable at a fixed address, so they are configured **st
 
 *Email-Server and DNS-Server static addresses: screenshots to be added.*
 
-### Step 7: DHCP Server
-*Screenshots to be added.*
-
-### Step 8: Inter-VLAN Routing and DHCP Helper
+### Step 7: Inter-VLAN Routing and DHCP Helper
 
 Inter-VLAN routing is done on the **multilayer switches** using **SVIs** (Switch Virtual Interfaces), one per VLAN. Each SVI is the default gateway for its department.
 
@@ -607,10 +601,7 @@ do wr
 
 Result: all SVIs came up (`Interface VlanXX, changed state to up`).
 
-### Step 9: Wireless Configuration
-*Screenshots to be added.*
-
-### Step 10: PAT (NAT Overload) + ACL
+### Step 8: PAT (NAT Overload) + ACL
 
 The internal network uses private `172.16.x.x` addresses, which are not routable on the internet. **PAT** translates all internal hosts to the router's outbound serial interface IP. A standard **ACL** decides which internal subnets are allowed to be translated.
 
@@ -646,7 +637,7 @@ interface serial0/2/1
 do wr
 ```
 
-#### Step 10.1: Default static routes with ISP failover
+#### Step 9: Default static routes with ISP failover
 
 Each core router sends internet-bound traffic to the ISPs using a **primary default route** and a **floating static route** as backup (higher administrative distance of 70). If the primary ISP link goes down, the backup route is installed automatically.
 
@@ -668,10 +659,6 @@ do wr
 
 > Packet Tracer shows the warning `Default route without gateway, if not a point-to-point interface, may impact performance` when the exit interface is used instead of a next-hop IP. It is safe on point-to-point serial links.
 
-### Step 11: Verification and Testing
-*Screenshots to be added.*
-
----
 
 ## 🚀 Possible Future Improvements
 
