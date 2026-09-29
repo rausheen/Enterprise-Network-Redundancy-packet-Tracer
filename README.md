@@ -2,9 +2,6 @@
 
 A complete, hierarchical and **fully redundant** campus network designed and implemented in **Cisco Packet Tracer** for a trading floor support centre with **600 staff** moving into a brand-new 3-floor building.
 
-> Video walkthrough (Hindi): *Share Market Company Network Design Project Using Cisco Packet Tracer in Hindi (Network Redundancy)*
-
----
 
 ## 📌 Project Scenario
 
